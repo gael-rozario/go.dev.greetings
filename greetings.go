@@ -9,7 +9,7 @@ import (
 
 func Greet(name string) (string, error) {
 
-	if name != "" {
+	if name == "" {
 		return "", errors.New("name should not be empty")
 	}
 	message := fmt.Sprintf(get_greeting_format(), name)
