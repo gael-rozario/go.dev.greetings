@@ -17,6 +17,22 @@ func Greet(name string) (string, error) {
 	return message, nil
 }
 
+func Greetings(name []string) (map[string]string, error) {
+
+    greetings := make(map[string]string)
+
+    for i:= range name{
+        if name[i] == ""{
+            return nil, errors.New("Name cannot be empty")
+        }
+    }
+
+    for i:= range name{
+       greetings[name[i]]= fmt.Sprintf(get_greeting_format(),name[i])
+    }
+    return greetings,nil
+}
+
 func get_greeting_format() string {
 
 	formatlist := []string{
