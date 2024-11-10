@@ -22,7 +22,7 @@ func get_greeting_format() string {
 	formatlist := []string{
 		"Hi there %s have a great day",
 		"How you doing %s",
-		fmt.Sprintf("Hi there %%s have a great %s", time.Now().Day()),
+		fmt.Sprintf("Hi there %%s have a great %s", time.Now().Weekday()),
 		"Hello %s welcome to go programming ",
 	}
 	return formatlist[rand.Intn(len(formatlist))]
